@@ -1,0 +1,12 @@
+{
+  "name": "generic-http-proxy",
+  "version": "1.0.0",
+  "description": "Simple configurable HTTP reverse proxy",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
