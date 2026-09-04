@@ -35,7 +35,8 @@ app.use(async (req, res) => {
 
     res.status(response.status);
     for (const [name, value] of response.headers) {
-      if (name !== "transfer-encoding") res.setHeader(name, value);
+      if (!["transfer-encoding", "content-encoding", "content-length"].includes(name))
+        res.setHeader(name, value);
     }
 
     res.send(Buffer.from(await response.arrayBuffer()));
